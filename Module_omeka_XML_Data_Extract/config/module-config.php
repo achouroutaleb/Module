@@ -2,20 +2,20 @@
 return [
     'controllers' => [
         'factories' => [
-            'PDFDoc\Controller\Index' => 'PDFDoc\Service\Controller\IndexControllerFactory',
+            'XML_Data_Extract\Controller\Index' => 'XML_Data_Extract\Service\Controller\IndexControllerFactory',
         ],
     ],
     'api_adapters' => [
         'invokables' => [
-            'PDFDoc_entities' => 'PDFDoc\Api\Adapter\EntityAdapter',
-            'PDFDoc_imports' => 'PDFDoc\Api\Adapter\ImportAdapter',
+            'XML_Data_Extract_entities' => 'XML_Data_Extract\Api\Adapter\EntityAdapter',
+            'XML_Data_Extract_imports' => 'XML_Data_Extract\Api\Adapter\ImportAdapter',
         ],
     ],
     'translator' => [
         'translation_file_patterns' => [
             [
                 'type' => 'gettext',
-                'base_dir' => OMEKA_PATH . '/modules/PDFDoc/language',
+                'base_dir' => OMEKA_PATH . '/modules/XML_Data_Extract/language',
                 'pattern' => '%s.mo',
                 'text_domain' => null,
             ],
@@ -23,42 +23,42 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            OMEKA_PATH . '/modules/PDFDoc/view',
+            OMEKA_PATH . '/modules/XML_Data_Extract/view',
         ],
     ],
     'view_helpers' => [
         'invokables' => [
-            'xmlPropertySelector' => 'PDFDoc\View\Helper\PropertySelector',
+            'xmlPropertySelector' => 'XML_Data_Extract\View\Helper\PropertySelector',
         ],
         'factories' => [
-            'mediaSidebar' => 'PDFDoc\Service\ViewHelper\MediaSidebarFactory',
-            'itemSidebar' => 'PDFDoc\Service\ViewHelper\ItemSidebarFactory',
+            'mediaSidebar' => 'XML_Data_Extract\Service\ViewHelper\MediaSidebarFactory',
+            'itemSidebar' => 'XML_Data_Extract\Service\ViewHelper\ItemSidebarFactory',
         ],
     ],
     'entity_manager' => [
         'mapping_classes_paths' => [
-            OMEKA_PATH . '/modules/PDFDoc/src/Entity',
+            OMEKA_PATH . '/modules/XML_Data_Extract/src/Entity',
         ],
     ],
     'form_elements' => [
         'factories' => [
-            'PDFDoc\Form\ImportForm' => 'XPDFDoc\Service\Form\ImportFormFactory',
-            'PDFDoc\Form\MappingForm' => 'PDFDoc\Service\Form\MappingFormFactory',
+            'XML_Data_Extract\Form\ImportForm' => 'XXML_Data_Extract\Service\Form\ImportFormFactory',
+            'XML_Data_Extract\Form\MappingForm' => 'XML_Data_Extract\Service\Form\MappingFormFactory',
         ],
     ],
     'xml_import1_mappings' => [
         'items' => [
-            '\PDFDoc\Mapping\PropertyMapping',
-            '\PDFDoc\Mapping\MediaMapping',
-            '\PDFDoc\Mapping\ItemMapping',
+            '\XML_Data_Extract\Mapping\PropertyMapping',
+            '\XML_Data_Extract\Mapping\MediaMapping',
+            '\XML_Data_Extract\Mapping\ItemMapping',
         ],
         'users' => [
-            '\PDFDoc\Mapping\UserMapping',
+            '\XML_Data_Extract\Mapping\UserMapping',
         ],
     ],
     'xml_import1_media_ingester_adapter' => [
-        'url' => 'PDFDoc\MediaIngesterAdapter\UrlMediaIngesterAdapter',
-        'html' => 'PDFDoc\MediaIngesterAdapter\HtmlMediaIngesterAdapter',
+        'url' => 'XML_Data_Extract\MediaIngesterAdapter\UrlMediaIngesterAdapter',
+        'html' => 'XML_Data_Extract\MediaIngesterAdapter\HtmlMediaIngesterAdapter',
         'iiif' => null,
         'oembed' => null,
         'youtube' => null,
@@ -67,12 +67,12 @@ return [
         'routes' => [
             'admin' => [
                 'child_routes' => [
-                    'PDFDoc' => [
+                    'XML_Data_Extract' => [
                         'type' => 'Literal',
                         'options' => [
-                            'route' => '/PDFDoc',
+                            'route' => '/XML_Data_Extract',
                             'defaults' => [
-                                '__NAMESPACE__' => 'PDFDoc\Controller',
+                                '__NAMESPACE__' => 'XML_Data_Extract\Controller',
                                 'controller' => 'Index',
                                 'action' => 'index',
                             ],
@@ -84,7 +84,7 @@ return [
                                 'options' => [
                                     'route' => '/past-imports',
                                     'defaults' => [
-                                        '__NAMESPACE__' => 'PDFDoc\Controller',
+                                        '__NAMESPACE__' => 'XML_Data_Extract\Controller',
                                         'controller' => 'Index',
                                         'action' => 'past-imports',
                                     ],
@@ -95,7 +95,7 @@ return [
                                 'options' => [
                                     'route' => '/map',
                                     'defaults' => [
-                                        '__NAMESPACE__' => 'PDFDoc\Controller',
+                                        '__NAMESPACE__' => 'XML_Data_Extract\Controller',
                                         'controller' => 'Index',
                                         'action' => 'map',
                                     ],
@@ -111,27 +111,27 @@ return [
         'AdminModule' => [
             
             [
-                'label' => 'PDFDoc Import1',
-                'route' => 'admin/PDFDoc',
-                'resource' => 'PDFDoc\Controller\Index',
+                'label' => 'XML_Data_Extract Import1',
+                'route' => 'admin/XML_Data_Extract',
+                'resource' => 'XML_Data_Extract\Controller\Index',
                 'pages' => [
                     [
                         'label'      => 'Import', // @translate
-                        'route'      => 'admin/PDFDoc',
-                        'resource'   => 'PDFDoc\Controller\Index',
+                        'route'      => 'admin/XML_Data_Extract',
+                        'resource'   => 'XML_Data_Extract\Controller\Index',
                     ],
                     [
                         'label'      => 'Import', // @translate
-                        'route'      => 'admin/PDFDoc/map',
-                        'resource'   => 'PDFDoc\Controller\Index',
+                        'route'      => 'admin/XML_Data_Extract/map',
+                        'resource'   => 'XML_Data_Extract\Controller\Index',
                         'visible'    => false,
                     ],
                     [
                         'label'      => 'Past Imports', // @translate
-                        'route'      => 'admin/PDFDoc/past-imports',
+                        'route'      => 'admin/XML_Data_Extract/past-imports',
                         'controller' => 'Index',
                         'action' => 'past-imports',
-                        'resource' => 'PDFDoc\Controller\Index',
+                        'resource' => 'XML_Data_Extract\Controller\Index',
                     ],
                 ],
             ],

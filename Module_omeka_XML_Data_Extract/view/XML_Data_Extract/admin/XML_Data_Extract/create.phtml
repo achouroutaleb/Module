@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \Zend\View\Renderer\PhpRenderer $this
- * @var \PDFDoc\Form\PDFDocForm $form
+ * @var \XML_Data_Extract\Form\XML_Data_ExtractForm $form
  * @var bool $selectAll
  * @var string $resourceType
  * @var int[] $resourceIds
@@ -19,9 +19,9 @@ $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 
 $form->prepare();
-$this->htmlElement('body')->appendAttribute('class', 'PDFDoc create items');
+$this->htmlElement('body')->appendAttribute('class', 'XML_Data_Extract create items');
 ?>
-<?php echo $this->pageTitle($translate('Create an PDFDoc')); ?>
+<?php echo $this->pageTitle($translate('Create an XML_Data_Extract')); ?>
 
 <?php $this->trigger('view.batch_edit.before'); ?>
 
@@ -37,7 +37,7 @@ $this->htmlElement('body')->appendAttribute('class', 'PDFDoc create items');
 <div class="sidebar always-open">
     <h3><?php echo $translate('Affected items'); ?></h3>
     <?php if ($resources): ?>
-    <p><?php echo sprintf($translate('You are creating an PDFDoc with the following %d items:'), count($resources)); ?></p>
+    <p><?php echo sprintf($translate('You are creating an XML_Data_Extract with the following %d items:'), count($resources)); ?></p>
     <ul class="batch-selected">
         <?php foreach ($resources as $resource): ?>
         <li><?php echo $resource->linkPretty('square', null, null, ['target' => '_blank']); ?></li>
@@ -45,7 +45,7 @@ $this->htmlElement('body')->appendAttribute('class', 'PDFDoc create items');
     </ul>
     <?php elseif ($itemSetCount): ?>
     <?php if ($itemSets): ?>
-    <p><?php echo sprintf($translate('You are creating an PDFDoc with %1$s items that belong to the following %2$d item sets:'),
+    <p><?php echo sprintf($translate('You are creating an XML_Data_Extract with %1$s items that belong to the following %2$d item sets:'),
         $this->hyperlink(number_format($count), $this->url('admin/default', ['controller' => 'item', 'action' => 'browse'], ['query' => $itemQuery], true), ['target' => '_blank']),
         count($itemSets));
     ?></p>
@@ -55,13 +55,13 @@ $this->htmlElement('body')->appendAttribute('class', 'PDFDoc create items');
         <?php endforeach; ?>
     </ul>
     <?php else: ?>
-    <p><?php echo sprintf($translate('You are creating an PDFDoc with %1$s items that belong to %2$s item sets.'),
+    <p><?php echo sprintf($translate('You are creating an XML_Data_Extract with %1$s items that belong to %2$s item sets.'),
         $this->hyperlink(number_format($count), $this->url('admin/default', ['controller' => 'item', 'action' => 'browse'], ['query' => $itemQuery], true), ['target' => '_blank']),
         $this->hyperlink(number_format($itemSetCount), $this->url('admin/default', ['controller' => 'item-set', 'action' => 'browse'], ['query' => $itemSetQuery], true), ['target' => '_blank']));
     ?></p>
     <?php endif; ?>
     <?php else: ?>
-    <p><?php echo sprintf($translate('You are creating an PDFDoc with %s items.'),
+    <p><?php echo sprintf($translate('You are creating an XML_Data_Extract with %s items.'),
         $this->hyperlink(number_format($count), $this->url(null, ['action' => 'browse'], ['query' => $query], true), ['target' => '_blank']));
     ?></p>
     <?php endif; ?>
