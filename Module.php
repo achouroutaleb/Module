@@ -25,8 +25,8 @@ class Module extends AbstractModule
     public function install(ServiceLocatorInterface $serviceLocator)
     {
         $logger = $serviceLocator->get('Omeka\Logger');
-        // Don't install if the pdftotext command doesn't exist.
-        // See: http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
+
+        // faut installer pdftotext avant d'éxecuter l'installation
         if ((int) shell_exec('hash pdftotext 2>&- || echo 1')) {
           $logger->info("pdftotext not found");
           throw new ModuleCannotInstallException(__('The pdftotext command-line utility '
@@ -74,11 +74,10 @@ class Module extends AbstractModule
     {
         return include __DIR__ . '/config/module.config.php';
     }
+       
         
     /**
-     * Attach listeners to events.
-     *
-     * @param SharedEventManagerInterface $sharedEventManager
+     Attacher des auditeurs à des événements.
      */
 
     public function attachListeners(SharedEventManagerInterface $sharedEventManager)

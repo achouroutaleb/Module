@@ -4,13 +4,16 @@ PDFtoXML ((module for Omeka S)
 Summary
 -----------
 PDFtoXML it's an Omeka's module to extract OCR text in XML from PDF files and create an xml file .
-Extract OCR (plugin upgraded for Omeka S)
-(need  IIIF Server module [module for Omeka S] https://github.com/Daniel-KM/Omeka-S-module-IiifServer )
-(need [IIIF-Search module](https://github.com/bubdxm/Omeka-S-module-IiifSearch) ).
+Extract OCR (plugin upgraded for Omeka S).
 
 
 Installation
 ------------
+To run with success this module we : 
+(need  IIIF Server module [module for Omeka S] https://github.com/Daniel-KM/Omeka-S-module-IiifServer ): IIIF Server is a module for Omeka S that adds the IIIF specifications to serve any images and medias.
+
+(need [IIIF-Search module](https://github.com/bubdxm/Omeka-S-module-IiifSearch) ):IIIF Search is a module for Omeka S that add IIIF Search Api for ocr content.
+
 
 - This module needs pdftohtml command-line tool on your server
 

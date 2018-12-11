@@ -1,6 +1,6 @@
 <?php
 namespace PdfToc\Job;
-
+ 
 use Omeka\Job\AbstractJob;
 
 class ExtractToc extends AbstractJob
