@@ -41,7 +41,7 @@ Using the PDFtoXML module
 - Create an item
 - Save this Item
 - After save, add PDF file(s) to this item
-- To locate extracted OCR xml file, select the item to which the PDF is attached. Normally, you should see an XML file attached to the record with the same filename than the pdf file. 
+- To locate extracted OCR xml file, select the item to which the PDF is attached.You should see an XML file attached to the record with the same filename than the pdf file. 
 
 
 License
