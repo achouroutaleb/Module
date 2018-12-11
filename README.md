@@ -3,7 +3,7 @@ PDFtoXML (module for Omeka S)
 
 Summary
 -----------
-PDFtoXML it's an Omeka's module to extract OCR text in XML from PDF files and create an xml file .The xml is stored as a new file associated with the item.
+PDFtoXML it's an Omeka's module to extract text in XML from PDF files and create an xml file .The xml is stored as a new file associated with the item.
 
 Installation
 ------------
@@ -33,15 +33,13 @@ https://sourceforge.net/projects/poppler-win32/
 ```
 
 - Install it from the admin → Modules → PDFtoXML -> install
-- Extract OCR automaticaly allow the upload of XML files 
-
 Using the PDFtoXML module
 ---------------------------
 
 - Create an item
 - Save this Item
 - After save, add PDF file(s) to this item
-- To locate extracted OCR xml file, select the item to which the PDF is attached.You should see an XML file attached to the record with the same filename than the pdf file. 
+- To locate extracted xml file, select the item to which the PDF is attached.You should see an XML file attached to the record with the same filename than the pdf file. 
 
 
 License
