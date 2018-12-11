@@ -1,4 +1,4 @@
-PDFtoXML ((module for Omeka S)
+PDFtoXML (module for Omeka S)
 =============================
 
 Summary
