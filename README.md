@@ -4,8 +4,6 @@ PDFtoXML ((module for Omeka S)
 Summary
 -----------
 PDFtoXML it's an Omeka's module to extract OCR text in XML from PDF files and create an xml file .
-Extract OCR (plugin upgraded for Omeka S).
-
 
 Installation
 ------------
